@@ -7,12 +7,12 @@ Simulation was conducted on 2d lattices of sizes 10x10, 40x40 and 100x100, achie
 
 Code relating to the lattice itself and its physical properties were organized through an IsingSubstance class. A MonteCarloSim class handled the simulation. In order to observe physical quantities (mainly heat capacity) over different temperatures, a TemperatureRun class was implemented. The project includes a child class for IsingSubstance, ImpureIsingSubstance, for simulating impurities in the material (fixed magnetic moment/spin, which cannot flip). Such impurities create complex boundary conditions for energy optima - the class SimulatedAnnealing uses exactly simulated annealing to find the optimized configurations across the lattice state space. The nice visuals of such optima are shown at the bottom of the readme.
 
+For convenience, the interaction strength J and Boltzmann constant k_B was chosen as 1. We measure magnetization in the unit spin of our lattice.
 
-
-Time evolution of energy (blue) and magnetization (red) for 100x100 lattice over 15000 timesteps, at T=2.3 K(close to T_c). Runtime: 2.59428s, using -03. We see convergence to equilibrium after <4000 timesteps.
+Time evolution of mean energy (blue) and magnetization (red) for 100x100 lattice over 15000 timesteps, at T=2.3 K(close to T_c). Runtime: 2.59428s, using -03. We see convergence to equilibrium after <4000 timesteps.
 <img width="560" height="420" alt="timeseries100_15k" src="https://github.com/user-attachments/assets/90f1fb7f-64ad-4b3f-bd2b-9a6c1fad4f5b" />
 
-Time evolution of mean normalized energy(blue) and magnetization(red) for 40x40 lattice over 200000 timesteps, T=2.3 K. On larger timescales, the chaos close to critical temperature becomes appearent.
+Time evolution of  energy(blue) and magnetization(red) for 40x40 lattice over 200000 timesteps, T=2.3 K. On larger timescales, the chaos close to critical temperature becomes appearent.
 
 
 <img width="560" height="387" alt="time series" src="https://github.com/user-attachments/assets/f1be6b3d-fc36-4160-9b36-cb7a02b63386" />

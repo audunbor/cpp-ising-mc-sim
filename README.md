@@ -21,10 +21,12 @@ Heat capacity as a function of temperature for lattice sizes 100x100 (blue), 40x
 <img width="560" height="420" alt="heatCap_102040" src="https://github.com/user-attachments/assets/0e235a06-2abe-42af-8133-cab326435134" />
 
 
- Simulated annealing .png's show 40x40 lattice with 0.09 and 0.4 share impurities, lattice configurations as expected with "blocks" of lattice pointing same direction (saving energy), broken up by fixed spins.
+We distribute impurities (spins/magnetic poles which cannot flip) randomly throughout the lattice with different concentrations. This creates complex energy minema. Using simulatied annealing, starting at T=75 and cooling close to 0, we obtain optimized configurations! As expected, the configurations show larger "blocks" of the lattice pointing same direction (saving energy), broken up by fixed spins.
 
 Energy optimum for 40x40 lattice with 0.09 share randomly distributed impurities:
 <img width="560" height="420" alt="simulated annealing 40x40_2" src="https://github.com/user-attachments/assets/c3c81521-1362-4ec2-ab24-a63bea97c5c4" />
 
 Energy optimum for 40x40 lattice with 0.40 share randomly distributed impurities:
 <img width="560" height="420" alt="sim_annealing_40x40_0 4" src="https://github.com/user-attachments/assets/378027a4-2dc8-40a2-be30-a41674d56b37" />
+
+Code for the different parts of the project has been /**/-ed out in main(). Feel free to try the code, although the graphics library is somewhat elaborate, and the better way might be to output a csv and visualize it somewhere else.

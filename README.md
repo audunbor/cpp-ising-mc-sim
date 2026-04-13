@@ -5,16 +5,16 @@ Ising materials show radically different time developments at a function of temp
 
 Simulation was conducted on 2d lattices of sizes 10x10, 40x40 and 100x100, achieving equilibrium after at most 5000 sweeps (timesteps) for most volitile temperature parameter, taking longer time to settle for larger lattices. The project was a major success: the scholastic yardstick of obtaining efficient timeevolution for 40x40 lattices was cleared, and the codebase manages to get interesting results for 100x100 and beyond efficiently.
 
-Organized through IsingSubstance class, handling lattice and physical properties, and MonteCarloSim class handling the simulation itself.
+Code relating to the lattice itself and its physical properties were organized through an IsingSubstance class. A MonteCarloSim class handled the simulation.
 
-Time evolution of energy (blue) and magnetization (red) for 100x100 lattice over 15000 timesteps. Runtime: 2.59428s, using -03. We see convergence to equilibrium after <4000 timesteps.
+Time evolution of energy (blue) and magnetization (red) for 100x100 lattice over 15000 timesteps, at T=2.3 K(close to T_c). Runtime: 2.59428s, using -03. We see convergence to equilibrium after <4000 timesteps.
 <img width="560" height="420" alt="timeseries100_15k" src="https://github.com/user-attachments/assets/90f1fb7f-64ad-4b3f-bd2b-9a6c1fad4f5b" />
 
-Time evolution of energy(blue) and magnetization(red) for 40x40 lattice over 200000 timesteps:
+Time evolution of energy(blue) and magnetization(red) for 40x40 lattice over 200000 timesteps, T=2.3 K:
 <img width="560" height="387" alt="time series" src="https://github.com/user-attachments/assets/f1be6b3d-fc36-4160-9b36-cb7a02b63386" />
 
 
-Project handles runs of simulations at different temperatures, in order to measure properties of the equilibrium state as a function of temperature. Specifically heat capacity was calculated, at temperatures from 2.1 to 2.5
+The project handles runs of simulations at different temperatures, in order to measure properties of the equilibrium state as a function of temperature. Specifically heat capacity was calculated, at temperatures from 2.1 to 2.5
 
 Heat capacity as a function of temperature for lattice sizes 100x100 (blue), 40x40 (red), 10x10 (green). We discover that heat capacity scales with size of lattice.
 <img width="560" height="420" alt="heatCap_102040" src="https://github.com/user-attachments/assets/0e235a06-2abe-42af-8133-cab326435134" />

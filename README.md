@@ -7,4 +7,4 @@ Organized through IsingSubstance class, handling lattice and physical properties
 
 Project handles measuring ergodic properties, such as heat capacity, as a function of temperature through TemperatureRun class.
 
-Introduced child class for Ising Materials with impurities (fixed magnetic moment/spin), and solved energy optimum for these by simulated annealing.
+Introduced child class for Ising Materials with impurities (fixed magnetic moment/spin), and solved energy optimum for these by simulated annealing. Simulated annealing .png's show 40x40 lattice with 0.09 and 0.4 share impurities, lattice configurations as expected with "blocks" of lattice pointing same direction (saving energy), broken up by fixed spins.

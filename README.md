@@ -17,7 +17,10 @@ Time evolution of energy(blue) and magnetization(red) for 40x40 lattice over 200
 
 
 Heat capacity as a function of temperature for lattice sizes 100x100 (blue), 40x40 (red), 10x10 (green). We discover that heat capacity scales with size of lattice.
+
 <img width="560" height="420" alt="heatCap_102040" src="https://github.com/user-attachments/assets/0e235a06-2abe-42af-8133-cab326435134" />
+
+
  Simulated annealing .png's show 40x40 lattice with 0.09 and 0.4 share impurities, lattice configurations as expected with "blocks" of lattice pointing same direction (saving energy), broken up by fixed spins.
 
 Energy optimum for 40x40 lattice with 0.09 share randomly distributed impurities:

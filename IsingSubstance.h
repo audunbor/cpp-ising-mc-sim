@@ -19,9 +19,7 @@ namespace IsingProject {
         virtual int getIndices(int i){return -1;}
         virtual int getIndSize(){return -1;}
         virtual void printImpurities(){};
-        /*Possible eneIsingSubstance(float T, int L){energy-changes over differences in state, negative
-        exponentiated with boltzmann factor (unit constants)
-        to get ratio of probablities in Metropolis algoritm.*/
+
         IsingSubstance(float T, int L) : T{T}, L{L}, Ninv{ 1/static_cast<float>(L*L)}, lattice{
             (2*(Eigen::ArrayXXf::Random(L,L).floor()+0.5)).cast<int>()
         }

@@ -9,8 +9,8 @@ Code relating to the lattice itself and its physical properties were organized t
 
 For convenience, the interaction strength J and Boltzmann constant k_B was chosen as 1. We measure magnetization in the unit spin of our lattice.
 
-Time evolution of mean energy (blue) and magnetization (red) for 100x100 lattice over 15000 timesteps, at T=2.3 K(close to T_c). Runtime: 2.59428s, using -03. We see convergence to equilibrium after <4000 timesteps.
-<img width="560" height="420" alt="timeseries100_15k" src="https://github.com/user-attachments/assets/90f1fb7f-64ad-4b3f-bd2b-9a6c1fad4f5b" />
+Time evolution of mean energy (blue) and magnetization (red) for 100x100 lattice over 15000 timesteps, at T=2.3 K(close to T_c). Runtime: 3.53874 seconds, using -03. We see convergence to equilibrium after <4000 timesteps.
+<img width="560" height="420" alt="timeseries100_15k" src="https://github.com/user-attachments/assets/771c685b-dd8b-444a-bf71-434cd7260bae" />
 
 Time evolution of  energy(blue) and magnetization(red) for 40x40 lattice over 400000 timesteps, T=2.3 K. On larger timescales, the chaos close to critical temperature becomes appearent.
 

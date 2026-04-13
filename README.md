@@ -12,11 +12,9 @@ For convenience, the interaction strength J and Boltzmann constant k_B was chose
 Time evolution of mean energy (blue) and magnetization (red) for 100x100 lattice over 15000 timesteps, at T=2.3 K(close to T_c). Runtime: 2.59428s, using -03. We see convergence to equilibrium after <4000 timesteps.
 <img width="560" height="420" alt="timeseries100_15k" src="https://github.com/user-attachments/assets/90f1fb7f-64ad-4b3f-bd2b-9a6c1fad4f5b" />
 
-Time evolution of  energy(blue) and magnetization(red) for 40x40 lattice over 200000 timesteps, T=2.3 K. On larger timescales, the chaos close to critical temperature becomes appearent.
+Time evolution of  energy(blue) and magnetization(red) for 40x40 lattice over 400000 timesteps, T=2.3 K. On larger timescales, the chaos close to critical temperature becomes appearent.
 
-
-<img width="560" height="387" alt="time series" src="https://github.com/user-attachments/assets/f1be6b3d-fc36-4160-9b36-cb7a02b63386" />
-
+<img width="560" height="420" alt="timeseries40_40k" src="https://github.com/user-attachments/assets/d70edfee-0c21-42c4-9230-0006ccb4bd01" />
 
 Heat capacity as a function of temperature for lattice sizes 100x100 (blue), 40x40 (red), 10x10 (green). We discover that heat capacity scales with size of lattice.
 

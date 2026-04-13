@@ -1,34 +1,33 @@
-#include "IsingSubstance.h"
+ #include "IsingSubstance.h"
 #include "MonteCarlo.h"
 
 using namespace std;
 
 namespace IsingProject {
     void MonteCarloSim::newState(){
-        /*We want to iterate over the chosen indices and */
-        // Eigen::ArrayXf draw(is.L*is.L, 1);
-        // draw = 0.5*(Eigen::ArrayXf::Random(is.L*is.L, 1) + 1); Might vectorize probability draw later
-        // Eigen::ArrayXi indices(is.L*is.L, 2);
-        //indices = (is.L*0.5*(Eigen::ArrayXf::Random(2, is.L*is.L)+1)).cast<int>();
-        // Eigen::ArrayXXf ps = findProbabilities(); Calculating probabilities on the go
-        // float* p_ptr = ps.data(); chose to remove p_ptr due to cache-problems.
+        /*Generates random 2d-indices in lattice, calculates energy-difference by flipping spin/state change
+        at chosen index according to 2d ising model, finds the probability ratio from pRatios array and uses 
+        this in the Metropolis algorithm. For ImpureIsingSubstance, isItPure uses polymorphism to
+        check whether the index (column-major) belongs to is->ImpureIndices. If so, fixed spin means
+        no flip can occur.*/
         int* l_ptr = is->lattice.data();
         //const int L = is.L;
         for(int i=0; i<is->L*is->L; i++){
             int ix = distr(gen);
             int iy = distr(gen);
-            //if(ix + iy*is->L == getImpurityIndices(639)){cout << " " << l_ptr[ix + iy*is->L ] << " ";}
             int ind = ix + iy*is->L;
             if(!is->isItPure(ind)){continue;}
+            //Finding change in energy:
             int count = l_ptr[((iy + 1)%is->L)*is->L + ix] + l_ptr[(ix - 1 + is->L)%is->L + is->L*iy] + l_ptr[ix+ is->L*((iy - 1 + is->L)%is->L)] + l_ptr[(ix + 1)%is->L + is->L*iy];
-            //int count = is->lattice(ix, (iy + 1)%is->L) + is->lattice((ix - 1 + is->L)%is->L, iy) + is->lattice(ix, (iy - 1 + is->L)%is->L) + is->lattice((ix + 1)%is->L, iy);
+            //Probability ratio:
             int rIndex = static_cast<int>(2-0.5*l_ptr[ind]*count);
+            //Metropolis algorithm:
             float pr = pRatios(rIndex);
             float draw = dis(gen);
             if(pr >= 1 || pr > draw){
+                //Flipping spin according to Metropolis:
                 l_ptr[ind]*=-1;
             }
-            //if(ix + iy*is->L == getImpurityIndices(0)){cout << l_ptr[ix + iy*is->L ] << endl;}
 
         }
     }

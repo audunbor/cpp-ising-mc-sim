@@ -25,7 +25,7 @@ Heat capacity as a function of temperature for lattice sizes 100x100 (blue), 40x
 
 
 
-We distribute impurities (spins/magnetic poles which cannot flip) randomly throughout the lattice with different concentrations, creating complex energy minema. Using simulatied annealing, starting at T=75 and cooling close to 0, we obtain optimized configurations! As expected, the configurations show larger "blocks" of the lattice pointing same direction (saving energy), broken up by fixed spins.
+We distribute impurities (spins/magnetic poles which cannot flip) randomly throughout the lattice with different concentrations, creating complex energy minema. Using simulatied annealing, starting at T=75 and cooling close to 0, we obtain optimized configurations! As expected, the configurations show larger "blocks" of the lattice pointing same direction (saving energy), broken up by fixed spins. The energy optimum of a pure substance would have all the spins pointing in the same direction, either up or down.
 
 Energy optimum for 40x40 lattice with 0.09 share randomly distributed impurities:
 <img width="560" height="420" alt="simulated annealing 40x40_2" src="https://github.com/user-attachments/assets/c3c81521-1362-4ec2-ab24-a63bea97c5c4" />

@@ -1,10 +1,28 @@
 # C++ Monte Carlo Simulation of 2D Ising Model
 Monte Carlo simulation of 2D Ising Model on 1600+ spin node lattice in C++. Aim is to model and describe phase transition of magnetic substance through Monte Carlo sim of spin lattice, and determine how size of lattice influences behavior. Emphasis on optimized code and good memory/cache handling, escpecially in core loop (MonteCarloSim::NewState).
 
-Simulation was conducted on 2d lattices of sizes 10x10, 40x40 and 100x100, achieving equilibrium after at most 5000 sweeps (timesteps) for most volitile temperature parameter. Longer time to settle for larger lattices.
+Ising materials show radically different time developments at a function of temperature, with signal volitility spiking at the critical temperature T_c approx 2.27 K - where variance goes to infinity. At this temperature, simulations take long to reach equilibrium (memoryloss of initial conditions), requiring highly efficient simulations. State of the art approach for the volitile state is typically the Wolff algorithm, where clusters of spins are flipped instead of single spins. The latter approach is the one implemented here, through a standard Metropolis algorithm using probabilities derived from statistical physics. The lack of algorithmic efficiency in our approach requires the code to be highly optimized in order to deal with temperatures close to T_c. 
+
+Simulation was conducted on 2d lattices of sizes 10x10, 40x40 and 100x100, achieving equilibrium after at most 5000 sweeps (timesteps) for most volitile temperature parameter, taking longer time to settle for larger lattices. The project was a major success: the scholastic yardstick of obtaining efficient timeevolution for 40x40 lattices was cleared, and the codebase manages to get interesting results for 100x100 and beyond efficiently.
 
 Organized through IsingSubstance class, handling lattice and physical properties, and MonteCarloSim class handling the simulation itself.
 
-Project handles measuring ergodic properties, such as heat capacity, as a function of temperature through TemperatureRun class.
+Time evolution of energy (blue) and magnetization (red) for 100x100 lattice over 15000 timesteps. Runtime: 2.59428s, using -03. We see convergence to equilibrium after <4000 timesteps.
+<img width="560" height="420" alt="timeseries100_15k" src="https://github.com/user-attachments/assets/90f1fb7f-64ad-4b3f-bd2b-9a6c1fad4f5b" />
+
+Time evolution of energy(blue) and magnetization(red) for 40x40 lattice over 200000 timesteps:
+<img width="560" height="387" alt="time series" src="https://github.com/user-attachments/assets/f1be6b3d-fc36-4160-9b36-cb7a02b63386" />
+
+
+Project handles runs of simulations at different temperatures, in order to measure properties of the equilibrium state as a function of temperature. Specifically heat capacity was calculated, at temperatures from 2.1 to 2.5
+
+Heat capacity as a function of temperature for lattice sizes 100x100 (blue), 40x40 (red), 10x10 (green). We discover that heat capacity scales with size of lattice.
+<img width="560" height="420" alt="heatCap_102040" src="https://github.com/user-attachments/assets/0e235a06-2abe-42af-8133-cab326435134" />
 
 Introduced child class for Ising Materials with impurities (fixed magnetic moment/spin), and solved energy optimum for these by simulated annealing. Simulated annealing .png's show 40x40 lattice with 0.09 and 0.4 share impurities, lattice configurations as expected with "blocks" of lattice pointing same direction (saving energy), broken up by fixed spins.
+
+Energy optimum for 40x40 lattice with 0.09 share randomly distributed impurities:
+<img width="560" height="420" alt="simulated annealing 40x40_2" src="https://github.com/user-attachments/assets/c3c81521-1362-4ec2-ab24-a63bea97c5c4" />
+
+Energy optimum for 40x40 lattice with 0.40 share randomly distributed impurities:
+<img width="560" height="420" alt="sim_annealing_40x40_0 4" src="https://github.com/user-attachments/assets/378027a4-2dc8-40a2-be30-a41674d56b37" />

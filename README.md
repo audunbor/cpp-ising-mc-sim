@@ -13,6 +13,8 @@ Time evolution of energy (blue) and magnetization (red) for 100x100 lattice over
 <img width="560" height="420" alt="timeseries100_15k" src="https://github.com/user-attachments/assets/90f1fb7f-64ad-4b3f-bd2b-9a6c1fad4f5b" />
 
 Time evolution of energy(blue) and magnetization(red) for 40x40 lattice over 200000 timesteps, T=2.3 K. On larger timescales, the chaos close to critical temperature becomes appearent.
+
+
 <img width="560" height="387" alt="time series" src="https://github.com/user-attachments/assets/f1be6b3d-fc36-4160-9b36-cb7a02b63386" />
 
 
